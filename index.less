@@ -1,1 +1,74 @@
 // Theme
+
+/* Colors */
+@colorMixRate    : 1%;
+@transparencyRate: 65%;
+@appOpacity      : 0;
+
+@baseColor           : rgb(31, 31, 31);
+@baseColorMix        : mix(@baseColor, transparent, 80%);
+@sidebarColor        : rgb(37, 37, 38);
+@sidebarColorMix     : mix(@sidebarColor, transparent, 20%);
+@mediaColor          : rgb(85, 85, 85);
+@mediaColorMix       : mix(@mediaColor, transparent, @transparencyRate);
+@mediaContainerColor : rgb(46, 46, 45);
+@songProgressColor   : rgb(184, 184, 184);
+@volumeThumbColor    : rgb(44, 44, 44);
+
+:root {
+    /* Less Variables */
+    --baseColor               : @baseColor;
+    --baseColorMix            : @baseColorMix;
+    --sidebarColor            : @sidebarColor;
+    --sidebarColorMix         : @sidebarColorMix;
+    --mediaColor              : @mediaColor;
+    --mediaColorMix           : @mediaColorMix;
+    --mediaContainerColor     : @mediaContainerColor;
+    --songProgressColor       : @songProgressColor;
+    --volumeThumbColor        : @volumeThumbColor;
+    /* Colors */
+    --keyColor                : #fa586a;
+    --ciderColor              : #ff2654;
+    --artistHoverColor        : rgba(250, 35, 59, 0.8);
+    --activeTabColor          : rgba(250, 88, 106, 0.25);
+    --volumeTrackColor        : rgba(200, 200, 200, 0.3);
+    --categoriesColor         : rgba(50, 50, 50, 0.5);
+    --searchBackgroundColor   : rgba(31, 31, 31, 0.6);
+    --searchBarBackgroundColor: rgba(0, 0, 0, 0.3);
+    --menuBackgroundColor     : rgba(36, 36, 36, 0.5);
+
+    /* Text */
+    --textColor     : #fafafa;
+
+}
+.app-navigation {
+    --color1: transparent;
+    --color2: transparent;
+    display : flex;
+
+    #app-sidebar {
+        background         : @sidebarColorMix;
+        // height          : calc(100% - var(--chromeHeight) + 1.5px);
+        // transition      : background-color 0.7s 1.5s var(--appleEase);
+        // backdrop-filter : blur(10px) saturate(180%);
+        border-right       : 1px solid var(--appBorderColor);
+        align-self         : flex-end;
+
+        .app-sidebar-item {
+            font-size : 15px;
+            padding   : 4px 16px;
+            color     : var(--textColor);
+            transition: background 0s 0s var(--appleEase), font-weight 0.3s 0.3s var(--appleEase);
+
+            &:not(.app-sidebar-item-playlist) .feather {
+                color: var(--keyColor);
+            }
+            .feather {
+                color: var(--sidebarIconColor);
+            }
+        }
+        .sidebar-icon>svg {
+            color: var(--keyColor);
+        }
+    }
+}
