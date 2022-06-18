@@ -30,7 +30,7 @@
     --keyColor                : #fa586a;
     --ciderColor              : #ff2654;
     --artistHoverColor        : rgba(250, 35, 59, 0.8);
-    --activeTabColor          : rgba(40, 120, 250, 0.75);
+    --activeTabColor          : rgba(40, 120, 250, 0.5);
     --volumeTrackColor        : rgba(200, 200, 200, 0.3);
     --categoriesColor         : rgba(50, 50, 50, 0.5);
     --searchBackgroundColor   : rgba(31, 31, 31, 0.6);
@@ -432,6 +432,26 @@
                         font-size: 0.9em;
 
                         display: flex;
+                    }
+                }
+
+                .playlist-display {
+                    transition: min-height 0.5s ease-in-out;
+                    min-height: 200px;
+
+                    .mediaContainer {
+                        transition: width 0.5s ease-in-out, height 0.5s ease-in-out;
+                        width: 128px !important;
+                        height: 128px !important;
+                    }
+                    .playlist-time {
+                        transition: height 0.2s ease-in-out, opacity 0.2s ease-in-out;
+                        height: 0px;
+                        opacity: 0;
+                    }
+
+                    .playlistInfo .playlist-info .nameEdit:focus-visible {
+                        outline: 1px solid var(--keyColor);
                     }
                 }
                 
