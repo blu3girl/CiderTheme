@@ -30,7 +30,7 @@
     --keyColor                : #fa586a;
     --ciderColor              : #ff2654;
     --artistHoverColor        : rgba(250, 35, 59, 0.8);
-    --activeTabColor          : rgba(40, 120, 250, 0.25);
+    --activeTabColor          : rgba(40, 120, 250, 0.75);
     --volumeTrackColor        : rgba(200, 200, 200, 0.3);
     --categoriesColor         : rgba(50, 50, 50, 0.5);
     --searchBackgroundColor   : rgba(31, 31, 31, 0.6);
@@ -76,6 +76,14 @@
             &:active {
                 transition: 0s;
                 background-color: var(--activeTabColor);
+            }
+
+            &:active svg {
+                color: var(--textColor)!important;
+            }
+
+            &.active svg {
+                color: var(--textColor)!important;
             }
 
             &.active {
@@ -191,6 +199,35 @@
             }
             .list-group-item-dark.applied{
                 background: var(--keyColor-disabled);
+            }
+
+            .md-btn-primary {
+                background: var(--keyColor);
+                border: 1px solid var(--keyColor);
+            }
+            .cd-mediaitem-list-item {
+                padding-left: 0;
+            }
+            .md-btn-icon {
+                // flex-direction: column;
+                min-width: 0!important;
+                width: 38px!important;
+                overflow: hidden;
+                justify-content: left;
+                padding: 8px 0;
+            }
+            .md-ico-play {
+                margin: 0 13px;
+            }
+            .md-ico-shuffle {
+                width: 16px;
+                height: 16px;
+                margin: 0 10px;
+            }
+            .md-ico-remove {
+                width: 16px;
+                height: 16px;
+                margin: 0 10px;
             }
 
             &.library-recentlyAdded {
@@ -400,29 +437,7 @@
                 
             }
             &.library-page {
-                .md-btn-primary {
-                    background: var(--keyColor);
-                    border: 1px solid var(--keyColor);
-                }
-                .cd-mediaitem-list-item {
-                    padding-left: 0;
-                }
-                .md-btn-primary.md-btn-icon {
-                    // flex-direction: column;
-                    min-width: 0!important;
-                    width: 36px!important;
-                    overflow: hidden;
-                    justify-content: left;
-                    padding: 8px 0;
-                }
-                .md-ico-play {
-                    margin: 0 13px;
-                }
-                .md-ico-shuffle {
-                    width: 16px;
-                    height: 16px;
-                    margin: 0 10px;
-                }
+                
             }
         }
     }
