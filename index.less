@@ -30,7 +30,7 @@
     --keyColor                : #fa586a;
     --ciderColor              : #ff2654;
     --artistHoverColor        : rgba(250, 35, 59, 0.8);
-    --activeTabColor          : rgba(250, 88, 106, 0.25);
+    --activeTabColor          : rgba(40, 120, 250, 0.25);
     --volumeTrackColor        : rgba(200, 200, 200, 0.3);
     --categoriesColor         : rgba(50, 50, 50, 0.5);
     --searchBackgroundColor   : rgba(31, 31, 31, 0.6);
@@ -54,59 +54,17 @@
         border-right       : 1px solid var(--appBorderColor);
         align-self         : flex-end;
 
-        .search-input {
-            transition: border 0.3s var(--appleEase);
-            background: var(--searchBarBackgroundColor);
-            filter    : saturate(0);
-            color     : var(--textColor);
-
-            &:focus {
-                border-bottom: none;
-                border       : 1px solid var(--keyColor);
-                transition   : border 0.3s var(--appleEase);
-            }
-        }
-
-        .search-input-container input {
-            height: 35px;
-        }
-
-        .search-hints-container .search-hints {
-            // margin-left:-10px;
-            width           : 92.5%;
-            background-color: var(--searchBackgroundColor);
-
-            .search-hint {
-                color: var(--textColor);
-
-                &:hover {
-                    background: var(--keyColor);
-                    color     : var(--textColorLight);
-                }
-            }
-        }
-
-        .app-sidebar-content {
-            padding-inline: 14px;
-        }
-
         .app-sidebar-header-text:not(:first-of-type) {
             margin-top: 1.25em;
         }
 
         .app-sidebar-item {
-            font-size : 15px;
-            padding   : 4px 16px;
-            color     : var(--textColor);
-            transition: background 0s 0s var(--appleEase), font-weight 0.3s 0.3s var(--appleEase);
+            color: var(--textColor);
 
             &:not(.app-sidebar-item-playlist) .feather {
                 color: var(--keyColor);
             }
 
-            .sidebar-icon {
-                transition: margin-right .3s;
-            }
             .feather {
                 color: var(--sidebarIconColor);
             }
@@ -122,12 +80,8 @@
 
             &.active {
                 transition: background .3s;
-                background : var(--activeTabColor);
+                background-color: var(--activeTabColor);
                 font-weight: 500;
-
-                .sidebar-icon {
-                    margin-right: 12px;
-                }
             }
         }
 
@@ -139,11 +93,6 @@
     #app-content {
 
         .content-inner {
-            .header-text {
-                margin-left   : 0.65rem;
-                padding-bottom: 1rem;
-                border-bottom : 1px solid var(--contentBorderColor);
-            }
 
             .title-browse-sp {
                 white-space  : nowrap;
@@ -164,9 +113,7 @@
             }
 
             .cd-mediaitem-list-item {
-
-                // border-top          : 1px solid @contentBorderColor;
-                // border-radius       : 0;
+                border-radius       : 0;
                 &:not(:last-of-type) .info-rect,
                 &:not(:last-of-type) .metainfo,
                 &:not(:last-of-type) .duration,
@@ -182,27 +129,7 @@
                 }
             }
 
-            .v-hl-container>*[data-v-45080727] {
-                .cd-mediaitem-list-item {
-                    border-top      : 1px solid var(--contentBorderColor);
-                    border-radius   : 0;
-                    // width        : calc(var(--contentWidth) / 4.225);
-                    margin-right    : 20px;
-
-                    .duration,
-                    .isLibrary {
-                        display: none;
-                    }
-
-                    .info-rect {
-                        border-bottom: none;
-                    }
-
-                }
-            }
-
             .grouping-btn {
-                // @baseColor: ;
                 background-color: var(--categoriesColor);
             }
 
@@ -210,114 +137,10 @@
                 z-index: 2;
             }
 
-            .v-hl-container[data-v-45080727] {
-                clip-path    : none;
-                overflow-y   : visible;
-                padding-block: 30px;
-                margin-block : -30px;
-                z-index      : 1;
-            }
-
-            .cd-hmedia-scroller.hmedia-scroller-card {
-                margin-top: -0.9em;
-            }
-
-            .cd-mediaitem-square-container {
-                align-self: flex-start;
-            }
-
             .cd-mediaitem-square {
-                .info-rect {
-                    .title {
-                        font-size: 0.95em;
-                    }
-
-                    .subtitle {
-                        font-size: 0.95em;
-                    }
-                }
-            }
-
-            .cd-mediaitem-square {
-                padding  : 0;
-                height   : auto;
-                width    : calc(var(--contentWidth) / 5.925);
-                min-width: 160px;
-
-                .artwork-container {
-                    width: 95%;
-
-                    .artwork {
-                        width       : auto;
-                        height      : auto;
-                        aspect-ratio: 1;
-                    }
-                }
-
-                .title,
-                .subtitle {
-                    text-align     : left;
-                    justify-content: left;
-
-                    >div {
-                        -webkit-box-orient: horizontal !important;
-                    }
-                }
-
                 .title+.subtitle {
                     opacity: 0.7;
-                }
-
-                &.mediaitem-card {
-                    width       : calc(var(--contentWidth) / 5);
-                    min-width   : 195px;
-                    max-width   : 288px;
-                    aspect-ratio: 57/74;
-
-                    .artwork-container {
-                        width: 100%;
-
-                        .artwork {
-                            width       : auto;
-                            height      : auto;
-                            aspect-ratio: 1;
-                        }
-                    }
-
-                    .title {
-                        text-overflow: ellipsis;
-                        white-space  : nowrap;
-                        overflow     : hidden;
-                    }
-
-                    .title,
-                    .subtitle {
-                        text-align        : center;
-                        justify-content   : center;
-                        margin-block-start: 0.5em;
-                        max-height        : 3.8em;
-                    }
-
-                    .title+.subtitle {
-                        opacity           : 1;
-                        margin-block-start: -0.5em;
-                    }
-                }
-
-                &.mediaitem-brick {
-                    width: calc(var(--contentWidth) / 4.95);
-
-                    .artwork {
-                        aspect-ratio: 290/163;
-                    }
-                }
-
-                &.mediaitem-video {
-                    width: calc(var(--contentWidth) / 4.95);
-
-                    .artwork {
-                        aspect-ratio: 16/9;
-                    }
+                    font-size: 12px;
                 }
             }
 
@@ -532,25 +355,6 @@
                         transition      : 0.1s ease-in-out;
                     }
                 }
-
-                // .cd-mediaitem-list-item {
-
-                //     // border-top          : 1px solid @contentBorderColor;
-                //     // border-radius       : 0;
-                //     &:not(:last-of-type) .info-rect,
-                //     &:not(:last-of-type) .metainfo,
-                //     &:not(:last-of-type) .duration,
-                //     &:not(:last-of-type) .explicit-icon {
-                //         border-bottom: 1px solid var(--contentBorderColor);
-                //         border-radius: 0;
-                //     }
-
-                //     .explicit-icon {
-                //         height             : 100%;
-                //         background-size    : 12px;
-                //         background-position: center;
-                //     }
-                // }
             }
             &.playlist-page {
                 .artist-chip{
@@ -585,7 +389,6 @@
                         .title{
                             width: 60ch;
                         }
-                        
                     }
                     .subtitle {
                         opacity: 0.85;
@@ -599,6 +402,26 @@
             &.library-page {
                 .md-btn-primary {
                     background: var(--keyColor);
+                    border: 1px solid var(--keyColor);
+                }
+                .cd-mediaitem-list-item {
+                    padding-left: 0;
+                }
+                .md-btn-primary.md-btn-icon {
+                    // flex-direction: column;
+                    min-width: 0!important;
+                    width: 36px!important;
+                    overflow: hidden;
+                    justify-content: left;
+                    padding: 8px 0;
+                }
+                .md-ico-play {
+                    margin: 0 13px;
+                }
+                .md-ico-shuffle {
+                    width: 16px;
+                    height: 16px;
+                    margin: 0 10px;
                 }
             }
         }
